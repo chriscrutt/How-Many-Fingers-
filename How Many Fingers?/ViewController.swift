@@ -10,9 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var guess: UITextField!
+    
+    @IBAction func guess(_ sender: Any) {
+        
+        let fingers = String(arc4random_uniform(6))
+        
+        if guess.text == fingers {
+            
+            answer.text = "You got it right!"
+            
+        } else {
+            
+            answer.text = "Wrong... it was " + fingers + "...."
+            
+        }
+
+        
+        
+    }
+    @IBOutlet weak var answer: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
